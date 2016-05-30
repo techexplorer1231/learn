@@ -1,0 +1,11 @@
+{
+  "name": "classexercise",
+  "version": "1.0.0",
+  "description": "Class Exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Pratap Singh",
+  "license": "MIT"
+}
