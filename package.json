@@ -4,8 +4,18 @@
   "description": "Class Exercise",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "./node_modules/.bin/nodemon index.js --harmony"
   },
   "author": "Pratap Singh",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "koa": "^1.2.0",
+    "koa-route": "^2.4.2"
+  }
 }

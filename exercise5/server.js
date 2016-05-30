@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 app.use(express.static(__dirname));
 
 app.use('/api', (req, res, next) => {
@@ -14,11 +18,23 @@ app.get('/api', function (req, res) {
   res.send('Hello GET');
 });
 
+// This responds with "Hello UserName" on the homepage
+app.get('/api/param/:name', function (req, res) {
+  console.log("Got a GET request with a parameter");
+  res.send(`Hello ${req.params.name}`);
+});
+
+// This responds with "Hello UserName" on the homepage
+app.get('/api/query', function (req, res) {
+  console.log("Got a GET request with a parameter");
+  res.send(`Hello ${req.query.name}`);
+});
+
 
 // This responds a POST request for the homepage
 app.post('/api', function (req, res) {
-  console.log("Got a POST request for the homepage");
-  res.send('Hello POST');
+  console.log("Got a POST request with data in body");
+  res.send(`Hello ${req.body.name}`);
 });
 
 // This responds a DELETE request for the /del_user page.
@@ -39,7 +55,7 @@ app.get('/api/ab*cd', function(req, res) {
   res.send('Hello PATTERN');
 });
 
-var server = app.listen(8081, function () {
+var server = app.listen(3000, function () {
 
   var host = server.address().address;
   var port = server.address().port;

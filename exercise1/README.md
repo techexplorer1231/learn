@@ -5,7 +5,7 @@
 
 **To Do**
 
-1. Add package nodemon as dev dependency in project structure. (we are using this module as it will watch files for changes and rerun the code)
+1. Add package nodemon as dev dependency in project structure.
 2. Add "start": "./node_modules/.bin/nodemon index.js" in package.json under scripts.
 3. Start project using command "npm start"
 2. Create a folder "excercise1" in the root directory.
